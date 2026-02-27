@@ -1,0 +1,44 @@
+{
+  "name": "cloth.vscode-cloth-highlight-0.0.1cloth.vscode-cloth-highlight-0.0.1",
+  "displayName": "Cloth",
+  "description": "Cloth Language Support",
+  "publisher": "Cloth Foundation",
+  "author": {
+	  "name": "Wylan Shoemaker"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+	"color": "#C80000",
+	"theme": "dark"
+  },
+  "pricing": "Free",
+  "contributes": {
+    "languages": [{
+      "id": "cloth",
+      "aliases": ["Cloth", "cloth"],
+      "extensions": [".co",".cloth",".clib"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./images/icon.png",
+        "dark": "./images/icon.png"
+      }
+    }],
+    "grammars": [{
+      "language": "cloth",
+      "scopeName": "source.co",
+      "path": "./syntaxes/cloth.tmLanguage.json"
+    }],
+    "iconThemes": [{
+      "id": "cloth-icons",
+      "label": "Cloth Icons",
+      "path": "./cloth-icon-theme.json"
+    }]
+  }
+}

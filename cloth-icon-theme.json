@@ -1,0 +1,13 @@
+{
+  "iconDefinitions": {
+    "cloth-icon": {
+      "iconPath": "./images/icon.png"
+    }
+  },
+  "fileExtensions": {
+    "co": "cloth-icon",
+    "cloth": "cloth-icon",
+    "clib": "cloth-icon"
+  },
+  "file": "cloth-icon"
+}

@@ -1,0 +1,277 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Cloth",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#meta-keywords"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#class-declaration"
+		},
+		{
+			"include": "#function-declaration"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.cloth",
+					"match": "//.*$"
+				},
+				{
+					"name": "comment.block.cloth",
+					"begin": "/\\*",
+					"end": "\\*/",
+					"patterns": [
+						{
+							"include": "#comments"
+						}
+					]
+				}
+			]
+		},
+		"meta-keywords": {
+			"name": "keyword.other.meta.cloth",
+			"match": "\\b(ALIGNOF|DEFAULT|LENGTH|MAX|MEMSPACE|MIN|SIZEOF|TO_BITS|TO_BYTES|TO_STRING|TYPEOF)\\b"
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.cloth",
+					"match": "\\b(if|else|for|while|do|switch|case|default|break|continue|return|as|in|is|and|or)\\b"
+				},
+				{
+					"name": "keyword.declaration.cloth",
+					"match": "\\b(func|struct|enum|interface|class)\\b"
+				},
+				{
+					"name": "storage.type.variable.cloth",
+					"match": "\\b(let|var|const)\\b"
+				},
+				{
+					"name": "storage.modifier.cloth",
+					"match": "\\b(public|private|internal|static|abstract|final|override|absolute)\\b"
+				},
+				{
+					"name": "keyword.other.module.cloth",
+					"match": "\\b(module|import)\\b"
+				},
+				{
+					"name": "keyword.other.memory.cloth",
+					"match": "\\b(new|delete|ref|shared|owned|atomic)\\b"
+				},
+				{
+					"name": "keyword.other.reserved.cloth",
+					"match": "\\b(async|await|try|catch|finally|throw)\\b"
+				},
+				{
+					"name": "keyword.operator.word.cloth",
+					"match": "\\b(as|in|and|or|is)\\b"
+				},
+				{
+					"name": "variable.language.cloth",
+					"match": "\\b(this|super)\\b"
+				},
+				{
+					"name": "keyword.other.shortcut.cloth",
+					"match": "\\b(int|float|double|short|long|real)\\b"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.cloth",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.language.null.cloth",
+					"match": "\\bnull\\b"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.primitive.integer.cloth",
+					"match": "\\b(i8|i16|i32|i64|u8|u16|u32|u64|int|uint|long|byte|bit)\\b"
+				},
+				{
+					"name": "storage.type.primitive.float.cloth",
+					"match": "\\b(f32|f64|float|double|real)\\b"
+				},
+				{
+					"name": "storage.type.primitive.text.cloth",
+					"match": "\\b(string|char)\\b"
+				},
+				{
+					"name": "storage.type.primitive.boolean.cloth",
+					"match": "\\bbool\\b"
+				},
+				{
+					"name": "storage.type.primitive.void.cloth",
+					"match": "\\bvoid\\b"
+				},
+				{
+					"name": "storage.type.primitive.any.cloth",
+					"match": "\\bany\\b"
+				},
+				{
+					"name": "entity.name.type.cloth",
+					"match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+				}
+			]
+		},
+		"class-declaration": {
+			"match": "\\b(class|struct|enum|interface)\\s+([A-Z][A-Za-z0-9_]*)\\b",
+			"captures": {
+				"1": {
+					"name": "keyword.declaration.cloth"
+				},
+				"2": {
+					"name": "entity.name.type.class.cloth"
+				}
+			}
+		},
+		"function-declaration": {
+			"match": "\\b(func)\\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\\b",
+			"captures": {
+				"1": {
+					"name": "keyword.declaration.cloth"
+				},
+				"2": {
+					"name": "entity.name.function.cloth"
+				}
+			}
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.cloth",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.cloth",
+							"match": "\\\\(n|r|t|\\\\|'|\"|0|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4})"
+						},
+						{
+							"name": "invalid.illegal.unknown-escape.cloth",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.cloth",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.cloth",
+							"match": "\\\\(n|r|t|\\\\|'|\"|0|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4})"
+						},
+						{
+							"name": "invalid.illegal.unknown-escape.cloth",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.hex.cloth",
+					"match": "\\b0[xX][0-9A-Fa-f_]+\\b"
+				},
+				{
+					"name": "constant.numeric.binary.cloth",
+					"match": "\\b0[bB][01_]+\\b"
+				},
+				{
+					"name": "constant.numeric.float.cloth",
+					"match": "\\b[0-9][0-9_]*\\.[0-9_]+([eE][+-]?[0-9_]+)?\\b"
+				},
+				{
+					"name": "constant.numeric.float.exponent.cloth",
+					"match": "\\b[0-9][0-9_]*[eE][+-]?[0-9_]+\\b"
+				},
+				{
+					"name": "constant.numeric.decimal.cloth",
+					"match": "\\b[0-9][0-9_]*\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.spread.cloth",
+					"match": "\\.\\.\\.?"
+				},
+				{
+					"name": "keyword.operator.increment-decrement.cloth",
+					"match": "(\\+\\+|--)"
+				},
+				{
+					"name": "keyword.operator.comparison.cloth",
+					"match": "(==|!=|<=|>=|<|>)"
+				},
+				{
+					"name": "keyword.operator.assignment.compound.cloth",
+					"match": "(\\+=|-=|\\*=|/=|%=)"
+				},
+				{
+					"name": "keyword.operator.assignment.cloth",
+					"match": "="
+				},
+				{
+					"name": "keyword.operator.arrow.cloth",
+					"match": "->"
+				},
+				{
+					"name": "keyword.operator.scope.cloth",
+					"match": "::"
+				},
+				{
+					"name": "keyword.operator.arithmetic.cloth",
+					"match": "(\\+|-|\\*|/|%)"
+				},
+				{
+					"name": "keyword.operator.logical.cloth",
+					"match": "(!|&|\\||~|\\^)"
+				},
+				{
+					"name": "keyword.operator.nullable.cloth",
+					"match": "\\?"
+				},
+				{
+					"name": "keyword.operator.other.cloth",
+					"match": "(@|#|\\$|`)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.co"
+}
