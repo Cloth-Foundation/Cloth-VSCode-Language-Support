@@ -1,12 +1,13 @@
 {
-  "name": "cloth.vscode-cloth-highlight-0.0.1cloth.vscode-cloth-highlight-0.0.1",
+  "name": "cloth.vscode-cloth-highlight-0.0.1",
   "displayName": "Cloth",
   "description": "Cloth Language Support",
   "publisher": "Cloth Foundation",
   "author": {
-	  "name": "Wylan Shoemaker"
+    "name": "Wylan Shoemaker"
   },
   "version": "0.0.1",
+  "main": "./out/extension.js",
   "engines": {
     "vscode": "^1.109.0"
   },
@@ -15,30 +16,162 @@
   ],
   "icon": "images/icon.png",
   "galleryBanner": {
-	"color": "#C80000",
-	"theme": "dark"
+    "color": "#C80000",
+    "theme": "dark"
   },
   "pricing": "Free",
   "contributes": {
-    "languages": [{
-      "id": "cloth",
-      "aliases": ["Cloth", "cloth"],
-      "extensions": [".co",".cloth",".clib"],
-      "configuration": "./language-configuration.json",
-      "icon": {
-        "light": "./images/icon.png",
-        "dark": "./images/icon.png"
+    "languages": [
+      {
+        "id": "cloth",
+        "aliases": [
+          "Cloth",
+          "cloth"
+        ],
+        "extensions": [
+          ".co",
+          ".cloth",
+          ".cl"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/logo-black.svg",
+          "dark": "./images/logo-white.svg"
+        }
       }
-    }],
-    "grammars": [{
-      "language": "cloth",
-      "scopeName": "source.co",
-      "path": "./syntaxes/cloth.tmLanguage.json"
-    }],
-    "iconThemes": [{
-      "id": "cloth-icons",
-      "label": "Cloth Icons",
-      "path": "./cloth-icon-theme.json"
-    }]
+    ],
+    "grammars": [
+      {
+        "language": "cloth",
+        "scopeName": "source.co",
+        "path": "./syntaxes/cloth.tmLanguage.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "cloth-icons",
+        "label": "Cloth Icons",
+        "path": "./cloth-icon-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "cloth.newClass",
+        "title": "New Class"
+      },
+      {
+        "command": "cloth.newStruct",
+        "title": "New Struct"
+      },
+      {
+        "command": "cloth.newEnum",
+        "title": "New Enum"
+      },
+      {
+        "command": "cloth.newInterface",
+        "title": "New Interface"
+      },
+      {
+        "command": "cloth.newTrait",
+        "title": "New Trait"
+      },
+      {
+        "command": "cloth.newClassLib",
+        "title": "New Class (Library)"
+      },
+      {
+        "command": "cloth.newStructLib",
+        "title": "New Struct (Library)"
+      },
+      {
+        "command": "cloth.newEnumLib",
+        "title": "New Enum (Library)"
+      },
+      {
+        "command": "cloth.newInterfaceLib",
+        "title": "New Interface (Library)"
+      },
+      {
+        "command": "cloth.newTraitLib",
+        "title": "New Trait (Library)"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "cloth/commands",
+        "label": "Cloth Object File"
+      },
+      {
+        "id": "cloth/library",
+        "label": "Cloth Library File"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "cloth/commands",
+          "group": "z_commands@1",
+          "when": "(explorerResourceIsFolder) || resourceExtname == .co || resourceExtname == .cl"
+        },
+        {
+          "submenu": "cloth/library",
+          "group": "z_commands@2",
+          "when": "(explorerResourceIsFolder) || resourceExtname == .co || resourceExtname == .cl"
+        }
+      ],
+      "cloth/commands": [
+        {
+          "command": "cloth.newClass",
+          "group": "1_new"
+        },
+        {
+          "command": "cloth.newStruct",
+          "group": "1_new"
+        },
+        {
+          "command": "cloth.newEnum",
+          "group": "1_new"
+        },
+        {
+          "command": "cloth.newInterface",
+          "group": "1_new"
+        },
+        {
+          "command": "cloth.newTrait",
+          "group": "1_new"
+        }
+      ],
+      "cloth/library": [
+        {
+          "command": "cloth.newClassLib",
+          "group": "1_new"
+        },
+        {
+          "command": "cloth.newStructLib",
+          "group": "1_new"
+        },
+        {
+          "command": "cloth.newEnumLib",
+          "group": "1_new"
+        },
+        {
+          "command": "cloth.newInterfaceLib",
+          "group": "1_new"
+        },
+        {
+          "command": "cloth.newTraitLib",
+          "group": "1_new"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/vscode": "^1.116.0",
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
   }
 }

@@ -1,3 +1,8 @@
 .vscode
 .vscodeignore
 Outline.md
+
+node_modules/
+out/
+
+package-lock.json

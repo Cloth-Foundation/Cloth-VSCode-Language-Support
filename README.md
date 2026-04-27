@@ -1,6 +1,6 @@
 # Cloth Language Support
 
-Official Visual Studio Code extension for the Cloth programming language. This extension provides syntax highlighting and language support for `.co`, `.cloth`, and `.clib` files.
+Official Visual Studio Code extension for the Cloth programming language. This extension provides syntax highlighting and language support for `.co`, and `.cl` files.
 
 ## Features
 
