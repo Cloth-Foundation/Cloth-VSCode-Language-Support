@@ -185,6 +185,21 @@
           }
         },
         {
+          "name": "meta.declaration.interface.inherited.cloth",
+          "match": "\\b(interface)(\\s*)(:)(\\s*)([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.interface.cloth"
+            },
+            "3": {
+              "name": "punctuation.separator.type.cloth"
+            },
+            "5": {
+              "name": "entity.other.inherited-interface.cloth"
+            }
+          }
+        },
+        {
           "name": "meta.function.definition.cloth",
           "match": "\\b(func)(\\s+)([A-Za-z_][A-Za-z0-9_]*)",
           "captures": {
@@ -218,7 +233,7 @@
         },
         {
           "name": "keyword.declaration.cloth",
-          "match": "\\b(func|class|struct|enum|trait)\\b"
+          "match": "\\b(func|class|struct|enum|trait|interface)\\b"
         },
         {
           "name": "keyword.other.inheritance.cloth",
