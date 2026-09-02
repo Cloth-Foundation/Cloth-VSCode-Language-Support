@@ -1,0 +1,11 @@
+{
+  "Override function": {
+    "prefix": "override",
+    "body": [
+      "override func ${1:Render}(${2}): ${3:void} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Implement an interface contract or override a base-class function."
+  }
+}

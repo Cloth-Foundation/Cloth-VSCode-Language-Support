@@ -245,7 +245,7 @@
         },
         {
           "name": "storage.modifier.cloth",
-          "match": "\\b(final|static|override|extern|unsafe)\\b"
+          "match": "\\b(abstract|final|override|sealed|static)\\b"
         },
         {
           "name": "keyword.control.import.cloth",
