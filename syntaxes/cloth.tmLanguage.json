@@ -217,7 +217,7 @@
       "patterns": [
         {
           "name": "keyword.control.conditional.cloth",
-          "match": "\\b(if|else|match)\\b"
+          "match": "\\b(if|else|switch|case|default|match)\\b"
         },
         {
           "name": "keyword.control.loop.cloth",

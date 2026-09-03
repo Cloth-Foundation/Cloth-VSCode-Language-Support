@@ -38,6 +38,10 @@ compiler executable to also compile the expanded snippet and verify that a
 missing `override` is rejected. These checks use Node's built-in test runner
 and do not require installed dependencies.
 
+`switch`, `case`, and `default` are highlighted, and the `switch` snippet supplies
+explicit arm blocks. Compiler-backed checks validate this snippet with `--check`
+and LLVM emission, then verify that invalid arm syntax preserves completed output.
+
 A Windows sanitizer compiler also needs its Clang ASan runtime directory on
 `PATH`, matching the compiler's CTest environment.
 

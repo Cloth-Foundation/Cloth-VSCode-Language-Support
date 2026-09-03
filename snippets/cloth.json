@@ -1,4 +1,17 @@
 {
+  "Switch statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:value}) {",
+      "\tcase ${2:0}: {",
+      "\t\t$0",
+      "\t}",
+      "\tdefault: {",
+      "\t}",
+      "}"
+    ],
+    "description": "Switch on an integer or enum value using independent arm blocks."
+  },
   "Override function": {
     "prefix": "override",
     "body": [
