@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Highlight all canonical typed numeric literals as one token, including
+  integer-core `f32` and `f64` forms, without reserving suffix names.
+
 - Highlight `switch`, `case`, and `default`; add a scoped-arm switch snippet
   and compiler checks for frontend validation, LLVM emission, and failed-output
   preservation.

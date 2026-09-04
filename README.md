@@ -3,6 +3,11 @@
 VS Code syntax highlighting, file icons, and snippets for Cloth. Cloth source
 files use the `.co` extension; each file defines its own type.
 
+Canonical numeric suffixes are highlighted as part of the literal. Integer
+suffixes are `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, and `u64`;
+floating suffixes are `f32` and `f64`. A floating suffix accepts either `1f32`
+or `1.0f32`. Standalone names such as `i8` remain ordinary identifiers.
+
 ## Interface implementations and overrides
 
 Use `override` on a class function that implements an interface contract or
@@ -34,9 +39,9 @@ extension. Run `npm install` and `npm run compile` to build the TypeScript
 extension, then launch it from VS Code's Extension Development Host.
 
 Run `npm test` for grammar and snippet checks. Set `CLOTHC_UNDER_TEST` to a
-compiler executable to also compile the expanded snippet and verify that a
-missing `override` is rejected. These checks use Node's built-in test runner
-and do not require installed dependencies.
+compiler executable to also check compiler-backed syntax, LLVM emission, and
+failed-output preservation. These checks use Node's built-in test runner and
+do not require installed dependencies.
 
 `switch`, `case`, and `default` are highlighted, and the `switch` snippet supplies
 explicit arm blocks. Compiler-backed checks validate this snippet with `--check`
