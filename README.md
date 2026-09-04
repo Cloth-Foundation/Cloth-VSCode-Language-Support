@@ -8,6 +8,11 @@ suffixes are `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, and `u64`;
 floating suffixes are `f32` and `f64`. A floating suffix accepts either `1f32`
 or `1.0f32`. Standalone names such as `i8` remain ordinary identifiers.
 
+Numeric notation also includes scientific forms such as `1.5e-2`, lowercase
+binary, octal, and hexadecimal prefixes such as `0b1010`, `0o755`, and `0xFF`,
+and single digit separators such as `1_000_000`. Hexadecimal digits may use
+either case; base prefixes and type suffixes remain lowercase.
+
 ## Interface implementations and overrides
 
 Use `override` on a class function that implements an interface contract or

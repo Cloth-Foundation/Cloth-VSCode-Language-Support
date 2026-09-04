@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Highlight scientific notation, lowercase binary/octal/hexadecimal integers,
+  and strictly placed digit separators as complete numeric tokens.
+
 - Highlight all canonical typed numeric literals as one token, including
   integer-core `f32` and `f64` forms, without reserving suffix names.
 
