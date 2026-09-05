@@ -13,6 +13,10 @@ binary, octal, and hexadecimal prefixes such as `0b1010`, `0o755`, and `0xFF`,
 and single digit separators such as `1_000_000`. Hexadecimal digits may use
 either case; base prefixes and type suffixes remain lowercase.
 
+Typed errors use the file-wide `error` envelope, `throw` expressions, and
+callable `throws` clauses. All three keywords are highlighted, including an
+error base after `error : BaseError`.
+
 ## Interface implementations and overrides
 
 Use `override` on a class function that implements an interface contract or

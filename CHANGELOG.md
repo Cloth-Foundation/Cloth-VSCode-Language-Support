@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Highlight `error` declarations, `throw` expressions, and `throws` contracts.
+
 - Highlight scientific notation, lowercase binary/octal/hexadecimal integers,
   and strictly placed digit separators as complete numeric tokens.
 

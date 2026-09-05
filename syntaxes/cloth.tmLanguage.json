@@ -200,6 +200,21 @@
           }
         },
         {
+          "name": "meta.declaration.error.inherited.cloth",
+          "match": "\\b(error)(\\s*)(:)(\\s*)([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.error.cloth"
+            },
+            "3": {
+              "name": "punctuation.separator.type.cloth"
+            },
+            "5": {
+              "name": "entity.other.inherited-class.cloth"
+            }
+          }
+        },
+        {
           "name": "meta.function.definition.cloth",
           "match": "\\b(func)(\\s+)([A-Za-z_][A-Za-z0-9_]*)",
           "captures": {
@@ -232,8 +247,12 @@
           "match": "\\breturn\\b"
         },
         {
+          "name": "keyword.control.exception.cloth",
+          "match": "\\b(throw|throws)\\b"
+        },
+        {
           "name": "keyword.declaration.cloth",
-          "match": "\\b(func|class|struct|enum|trait|interface)\\b"
+          "match": "\\b(func|class|struct|enum|error|trait|interface)\\b"
         },
         {
           "name": "keyword.other.inheritance.cloth",
